@@ -1,0 +1,345 @@
+/* content.css */
+
+/* 1. Base font and background adjustments for the entire portal */
+body {
+    background-color: #f9fafb !important;
+    font-family: "Segoe UI", Tahoma, sans-serif !important;
+    color: #2c3e50 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. Beautify the top banner container */
+.bannerContainer {
+    background-image: none !important; /* Remove existing background-image */
+    background-color: #0d47a1 !important; /* Deep blue background */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 85px !important;
+    border-bottom: 2px solid #ffc107 !important; /* Gold accent */
+}
+.bannerContainer img.bannerText {
+    max-height: 60px !important;
+    width: auto !important;
+}
+
+/* 3. Navigation “buttons” styling */
+.aimsMenu {
+    display: inline-block !important;
+    margin: 0 4px !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    background-color: #e3f2fd !important; /* Light blue */
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+.aimsMenu:hover {
+    background-color: #bbdefb !important; /* Slightly darker on hover */
+    transform: translateY(-1px) !important;
+}
+/* Active menu has a stronger accent */
+.aimsMenu.activeMenu {
+    background-color: #1976d2 !important; /* Strong blue */
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+.aimsMenu.activeMenu:hover {
+    background-color: #1565c0 !important; /* Darker blue on active hover */
+}
+.aimsMenu .notActiveMenu {
+    font-weight: 600 !important;
+    color: #0d47a1 !important;
+}
+
+/* 4. Beautify forms/inputs/selects */
+select,
+input[type="text"],
+input[type="date"] {
+    border: 1px solid #b0bec5 !important;
+    border-radius: 4px !important;
+    padding: 6px 8px !important;
+    font-size: 14px !important;
+    background-color: #ffffff !important;
+    color: #263238 !important;
+}
+select:focus,
+input:focus {
+    outline: none !important;
+    border-color: #1976d2 !important;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3) !important;
+}
+
+/* 5. Calendar table styling using CSS Grid fallback */
+.aims-container table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 14px !important;
+    margin: 16px 0 !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+.aims-container th,
+.aims-container td {
+    padding: 10px !important;
+    text-align: center !important;
+    border: 1px solid #eceff1 !important;
+}
+.aims-container th {
+    background-color: #1976d2 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+.aims-container td {
+    background-color: #fff !important;
+    color: #37474f !important;
+}
+.aims-container td:not(:empty):hover {
+    background-color: #e3f2fd !important;
+    cursor: pointer !important;
+}
+/* Highlight current day cell if present */
+.aims-container td[bgcolor="white"] {
+    background-color: #ffecb3 !important; /* Light gold */
+    font-weight: 600 !important;
+}
+
+/* 6. Table caption / “No Event Data” box */
+.aims-background {
+    background-color: #fafafa !important;
+    border: 2px dashed #b0bec5 !important;
+    border-radius: 4px !important;
+    padding: 16px !important;
+    text-align: center !important;
+    color: #546e7a !important;
+    font-style: italic !important;
+}
+
+/* 7. Footer styling */
+.aims-footer {
+    background-color: #eceff1 !important;
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+    color: #455a64 !important;
+}
+.aims-footer p {
+    margin: 4px 0 !important;
+}
+.aims-footer img {
+    vertical-align: middle !important;
+    height: 24px !important;
+    margin: 0 4px !important;
+}
+
+/* 8. Miscellaneous “dialog” (noty/datepicker) overrides */
+.ui-widget-header {
+    background: #1976d2 !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+}
+.ui-widget-content {
+    background: #ffffff !important;
+    border: 1px solid #cfd8dc !important;
+    color: #263238 !important;
+}
+.ui-dialog-title {
+    font-weight: 600 !important;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+    background-color: #1976d2 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+}
+.ui-dialog .ui-dialog-buttonpane button:hover {
+    background-color: #1565c0 !important;
+}
+
+/* ─── Schedule Table: override all “inside” cells to blue ─── */
+
+/* 1. Full-width header/time‐label cells (currently #D4D9E5) → deeper blue + white text */
+.aims-panel table table table th {
+    background-color: #1976d2 !important; /* Maroon‐dark equivalent in blue */
+    color: #ffffff !important;
+    font-family: Tahoma, sans-serif !important;
+    font-size: 11px !important;
+}
+
+/* 2. All “interior” <td> in the schedule (including empty slots & entries) → light blue */
+.aims-panel table table table td {
+    background-color: #e3f2fd !important; /* Very pale blue */
+    color: #263238 !important;
+    font-family: Tahoma, sans-serif !important;
+    font-size: 11px !important;
+    text-align: center !important;
+    border: 1px solid #000000 !important; /* Preserve the black border */
+}
+
+/* 3. Preserve time‐label cells’ numbering background (light gray) */
+/*    These <td> contain the “07:00 AM / 07:30 AM / 07:59 AM” text and had #D4D9E5 */
+.aims-panel table table table td[style*="background:#D4D9E5"] {
+    background-color: #eceff1 !important; /* Light gray, so it still stands out from pale blue */
+    font-weight: 600 !important;
+}
+
+/* 4. Override any inline “green” (#ABD478) for actual class slots → light blue too */
+.aims-panel table table table td[style*="background:#ABD478"] {
+    background-color: #e3f2fd !important;
+}
+
+/* 5. If you want the “current time” or differently highlighted cells (originally white/bgcolor="white") */
+/*    keep the pale‐gold highlight, but blend it with blue slightly */
+.aims-panel table table table td[bgcolor="white"] {
+    background-color: #ffecb3 !important; /* preserve pale gold for “today” marker */
+    font-weight: 600 !important;
+}
+
+/* Override any cell with inline “background:#ABD478” to a pale blue */
+.aims-panel td[style*="background:#ABD478"] {
+    background-color: #e3f2fd !important; /* pale blue */
+    color: #263238 !important;
+}
+
+/* Shade “titlelist” headers in blue */
+/* ── Force all .titlelist headers to blue ── */
+/* ── Force .titlelist headers to blue with highest specificity ── */
+/* ── Truly override any gradient or color on .titlelist ── */
+.aims-panel table.table.table-bordered.transparent thead > tr > th.titlelist {
+    background: #1976d2 !important; /* medium‐blue fill */
+    background-image: none !important; /* cancel any gradient */
+    color: #ffffff !important; /* white text */
+    padding: 8px !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+}
+
+/* ────────── CIT Banner Text Styling ────────── */
+
+/* 1. Ensure .bannerContainer is a clean white/centered box */
+.bannerContainer {
+    background-color: #ffffff !important; /* keep background white */
+    padding: 20px !important;
+    text-align: center !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+    border-bottom: 3px solid #1976d2 !important; /* blue accent line */
+}
+
+/* 2. Style the injected text */
+.cit-banner-text {
+    display: inline-block !important;
+    max-width: 600px !important;
+    font-family: "Segoe UI", Tahoma, sans-serif !important;
+    color: #1976d2 !important; /* CIT-blue header */
+}
+
+/* 2a. Large heading (Cebu Institute of Technology) */
+.cit-banner-text h1 {
+    margin: 0 !important;
+    font-size: 2.5rem !important; /* ~40px */
+    font-weight: 700 !important;
+    color: #1976d2 !important; /* medium‐blue */
+    letter-spacing: 1px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2b. Paragraph copy underneath */
+.cit-banner-text p {
+    margin: 12px 0 0 0 !important;
+    font-size: 1rem !important; /* ~16px */
+    line-height: 1.4 !important;
+    color: #37474f !important; /* dark charcoal for easy readability */
+}
+
+/* 3. Hide/remove the old <img> if it somehow still loads */
+.bannerContainer img {
+    display: none !important;
+}
+
+
+/* Target the login panel */
+/* 9. Login Panel Styling */
+.aims-loginpanel {
+    background-color: #ffffff !important; /* Clean white background */
+    border-radius: 8px !important;
+    padding: 30px !important;
+    max-width: 400px !important;
+    margin: 40px auto !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    text-align: center !important;
+    color: #2c3e50 !important;
+}
+
+/* Heading style */
+.aims-loginpanel h3 {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #1976d2 !important; /* CIT blue */
+    margin-bottom: 10px !important;
+}
+
+/* Label styling */
+.aims-textfield label {
+    display: block !important;
+    margin-top: 8px !important;
+    font-size: 0.9rem !important;
+    color: #455a64 !important; /* dark slate gray */
+    text-align: left !important;
+}
+
+/* Input fields */
+.aims-textfield input {
+    width: 100% !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+    border: 1px solid #b0bec5 !important;
+    margin-top: 4px !important;
+    font-size: 14px !important;
+    background-color: #f5f5f5 !important;
+    color: #263238 !important;
+    transition: border-color 0.3s ease !important;
+}
+
+.aims-textfield input:focus {
+    border-color: #1976d2 !important;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2) !important;
+    outline: none !important;
+}
+
+/* Buttons */
+.aims-button.primary {
+    background-color: #1976d2 !important;
+    color: #fff !important;
+    padding: 10px 18px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+
+.aims-button.primary:hover {
+    background-color: #1565c0 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Spacing between buttons */
+.aims-textfield.flex.space-between {
+    gap: 10px !important;
+    margin-top: 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+/* Forgot password link */
+.aims-loginpanel p {
+    margin-top: 16px !important;
+    color: #607d8b !important;
+    font-size: 0.9rem !important;
+}
+
+.aims-loginpanel p a {
+    color: #1976d2 !important;
+    text-decoration: underline !important;
+}
