@@ -1,3 +1,4 @@
+![screenshot_19062025_032551](https://github.com/user-attachments/assets/349d634d-47da-4ef4-aa1b-dc123b2f6f81)
 # Portal Beautifier
 
 A lightweight Firefox extension designed for the AIMS Student Portal at Cebu Institute of Technology. It overrides default button styles, colors, and replaces the branded banner with a custom heading.
